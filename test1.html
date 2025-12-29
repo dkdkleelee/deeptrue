@@ -5,19 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>test1</title>
   <style>
-    html, body { margin: 0; padding: 0; }
-    img { display: block; width: 100%; height: auto; }
+    :root{
+      --page-max: 540px; /* 모바일 랜딩 폭 (원하시면 480/600 등으로 조절) */
+      --bg: #0f141a;     /* 바깥 여백 배경색 */
+    }
+    html, body { margin:0; padding:0; background: var(--bg); }
+    .wrap{
+      max-width: var(--page-max);
+      margin: 0 auto;          /* 가운데 정렬 */
+      background: #000;        /* 이미지 주변 검정 처리(취향) */
+    }
+    img{
+      display:block;
+      width:100%;
+      height:auto;
+    }
   </style>
 </head>
 <body>
-  <img src="./img/단락텍스트1.png" alt="단락텍스트1" />
-  <img src="./img/단락텍스트2.png" alt="단락텍스트2" />
-  <img src="./img/단락텍스트3.png" alt="단락텍스트3" />
-  <img src="./img/단락텍스트4.png" alt="단락텍스트4" />
-  <img src="./img/단락텍스트5.png" alt="단락텍스트5" />
-  <img src="./img/단락텍스트6.png" alt="단락텍스트6" />
-  <img src="./img/단락텍스트7.png" alt="단락텍스트7" />
-  <img src="./img/단락텍스트8.png" alt="단락텍스트8" />
-  <img src="./img/단락텍스트9.png" alt="단락텍스트9" />
+  <main class="wrap">
+    <img src="./img/단락텍스트1.png" alt="1" loading="eager" decoding="async">
+    <img src="./img/단락텍스트2.png" alt="2" loading="lazy" decoding="async">
+    <img src="./img/단락텍스트3.png" alt="3" loading="lazy" decoding="async">
+    <img src="./img/단락텍스트4.png" alt="4" loading="lazy" decoding="async">
+    <img src="./img/단락텍스트5.png" alt="5" loading="lazy" decoding="async">
+    <img src="./img/단락텍스트6.png" alt="6" loading="lazy" decoding="async">
+    <img src="./img/단락텍스트7.png" alt="7" loading="lazy" decoding="async">
+    <img src="./img/단락텍스트8.png" alt="8" loading="lazy" decoding="async">
+    <img src="./img/단락텍스트9.png" alt="9" loading="lazy" decoding="async">
+  </main>
 </body>
 </html>
