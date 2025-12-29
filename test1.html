@@ -11,7 +11,7 @@
       --bg: #0f141a;
     }
 
-    html, body {
+    html, body{
       margin:0;
       padding:0;
       background: var(--bg);
@@ -29,43 +29,74 @@
       height:auto;
     }
 
-    /* === 단락텍스트9 전용 === */
+    /* ===============================
+       단락텍스트9 전용 클릭 영역
+       =============================== */
     .image-box{
       position: relative;
     }
 
     .click-area{
       position: absolute;
-      left: 10%;
-      right: 10%;
-      bottom: 12%;
-      height: 18%;
+      z-index: 10;
       cursor: pointer;
-      /* 디버깅용 (확인 후 제거) */
-      /* background: rgba(255,0,0,0.2); */
+      pointer-events: auto;
+
+      /* 위치 확인용 (맞춘 뒤 주석 처리) */
+      /* background: rgba(255,0,0,0.25); */
+    }
+
+    /* ① 우리가 알려줄게! */
+    .click-area.banner{
+      left: 8%;
+      width: 84%;
+      top: 30%;
+      height: 20%;
+    }
+
+    /* ② 지금 바로 무료로 확인하세요! */
+    .click-area.cta{
+      left: 20%;
+      width: 60%;
+      bottom: 8%;
+      height: 14%;
     }
   </style>
 </head>
 
 <body>
   <main class="wrap">
-    <img src="./img/단락텍스트1.png">
-    <img src="./img/단락텍스트2.png">
-    <img src="./img/단락텍스트3.png">
-    <img src="./img/단락텍스트4.png">
-    <img src="./img/단락텍스트5.png">
-    <img src="./img/단락텍스트6.png">
-    <img src="./img/단락텍스트7.png">
-    <img src="./img/단락텍스트8.png">
+    <img src="./img/단락텍스트1.png" alt="1">
+    <img src="./img/단락텍스트2.png" alt="2">
+    <img src="./img/단락텍스트3.png" alt="3">
+    <img src="./img/단락텍스트4.png" alt="4">
+    <img src="./img/단락텍스트5.png" alt="5">
+    <img src="./img/단락텍스트6.png" alt="6">
+    <img src="./img/단락텍스트7.png" alt="7">
+    <img src="./img/단락텍스트8.png" alt="8">
 
-    <!-- 🔽 단락텍스트9 -->
+    <!-- ===== 단락텍스트9 ===== -->
     <div class="image-box">
       <img src="./img/단락텍스트9.png" alt="9">
 
-      <div class="click-area"
-           onclick="alert('무료로 확인합니다!')">
-      </div>
+      <!-- 우리가 알려줄게! -->
+      <div class="click-area banner"
+           onclick="onBannerClick()"></div>
+
+      <!-- 지금 바로 무료로 확인하세요! -->
+      <div class="click-area cta"
+           onclick="onCtaClick()"></div>
     </div>
   </main>
+
+  <script>
+    function onBannerClick(){
+      alert('우리가 알려줄게!');
+    }
+
+    function onCtaClick(){
+      alert('지금 바로 무료로 확인하세요!');
+    }
+  </script>
 </body>
 </html>
